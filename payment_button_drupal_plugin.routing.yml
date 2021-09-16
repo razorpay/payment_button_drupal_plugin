@@ -1,0 +1,46 @@
+payment_button_drupal_plugin.settings_form:
+ path: 'admin/config/content/payment_button_drupal_plugin'
+ defaults:
+   _form: '\Drupal\payment_button_drupal_plugin\Form\PaymentButtonPluginForm'
+   _title: 'Razorpay Payment Button Plugin'
+ requirements:
+   _permission: 'administer site configuration'
+
+payment_button_drupal_plugin.content:
+  path: '/button_json'
+  defaults:
+    _controller: '\Drupal\payment_button_drupal_plugin\Controller\Payment::content'
+  requirements:
+    _permission: 'access content'
+
+payment_button_drupal_plugin.razorpay_buttons_page:
+  path: '/payment_buttons'
+  defaults:
+    _controller: '\Drupal\payment_button_drupal_plugin\Controller\Payment::razorpay_buttons_page'
+  requirements:
+    _permission: 'access content'
+
+payment_button_drupal_plugin.button_page:
+  path: '/button_view_page/{id}'
+  defaults:
+    _controller: '\Drupal\payment_button_drupal_plugin\Controller\Payment::button_page'
+  requirements:
+    _permission: 'access content'
+
+payment_button_drupal_plugin.btn_action:
+  path: '/btn_action/{id}/{status}'
+  defaults:
+    _controller: '\Drupal\payment_button_drupal_plugin\Controller\Payment::btn_action'
+  requirements:
+    _permission: 'access content'
+
+payment_button_drupal_plugin.payment_setting:
+ path: 'payment_setting'
+ defaults:
+   _form: '\Drupal\payment_button_drupal_plugin\Form\Settings'
+   _title: 'Payment Button Settings'
+ requirements:
+   _permission: 'access content'
+
+
+

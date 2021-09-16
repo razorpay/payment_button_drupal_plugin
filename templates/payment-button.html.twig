@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.rzp-container {
+    border: 1px solid #dfe5e7;
+    margin-top: 30px;
+    background-color: #f0f3f4;
+    margin-left: 5px !important;
+}
+.panel-heading {
+    line-height: 74px;
+    vertical-align: middle;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 18px;
+    padding: 0 20px;
+    border-bottom: 1px solid #fff;
+}
+.text-body {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    font-weight: 600;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+body {
+    background: #f0f0f1;
+    color: #3c434a;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    font-size: 13px;
+    line-height: 1.4em;
+    min-width: 600px;
+}
+.row-panel {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: auto;
+    margin-left: auto;
+}
+.panel-value {
+    color: #58666e;
+    padding: 10px;
+}
+.panel-label {
+    color: #8991ae;
+    padding: 10px;
+}
+.status-label {
+    min-width: 78px;
+    font-size: 12px;
+    border-radius: 20px;
+    background-color: #5bc0de;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+    padding: 5px 1.5em;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.status-button {
+    padding: 0;
+    margin: 0 4px 0 12px;
+    text-transform: capitalize;
+}
+a, div {
+    outline: 0;
+}
+div {
+    display: block;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+
+.button-items-detail {
+    margin: 0px 0;
+    background-color: #f9f9f9;
+    padding: 22px;
+    border-radius: 20px;
+    font-size: 14px;
+    width: 500px;
+}
+.col-panel{
+    flex: 0 0 25%;
+    max-width: 25%
+}
+.col-md-7-panel{
+    margin: 20px;
+    text-align: center;
+}
+.rzp-currency {
+    font-weight: normal;
+    color: inherit;
+    opacity: 0.7;
+    white-space: nowrap;
+    font-size: 100%;
+}
+</style>
+</head>
+<body>
+{% for item in items %} 
+
+<div > <a class="status-button" href = '../payment_buttons'> <--- Button list</a> > {{item.title}}</div>
+<div class="row-panel rzp-container">
+                    <div class="text-body panel-heading">{{ item.title }}</div>
+                <div class="row-panel panel-body">
+                    <div class="col-md-5 panel-body-left">
+                        <div class="row-panel">
+                            <div class="col-sm-4 panel-label">Button ID</div>
+                            <div class="col-sm-8 panel-value">{{ item.id }}</div>
+                        </div>
+                        <div class="row-panel">
+                            <div class="col-sm-4 panel-label">Button Status</div>
+                            <div class="col-sm-8 panel-value">
+                                <span class="status-label">{{item.status}}</span>
+                                <a  class="status-button" href = '../btn_action/{{item.id}}/{{item.status}}'> {{item.btn_act}}</a>
+                            </div>
+                        </div>
+                        <div class="row-panel">
+                            <div class="col-sm-4 panel-label">Total Quantity Sold</div>
+                            <div class="col-sm-8 panel-value">{{ item.quantity_sold }}</div>
+                        </div>
+                        <div class="row-panel">
+                            <div class="col-sm-4 panel-label">Total revenue</div>
+                            <div class="col-sm-8 panel-value"><span class="rzp-currency">₹ </span>{{ item.total_revenue }}</div>
+                        </div>
+                        <div class="row-panel">
+                            <div class="col-sm-4 panel-label">Created on</div>
+                            <div class="col-sm-8 panel-value">{{ item.created_at }}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-7-panel"><div class="button-items-detail">
+                            <div class="row-panel">
+                                <div class="col-panel"><b>{{item.name}}</b></div>
+                                <div class="col-panel"><b>Revenue</b></div>
+                                <div class="col-panel"><b>Price</b></div>
+                                <div class="col-panel"><b>Unit Sold</b></div>
+                            </div>
+                            <div class="row-panel">
+                                <div class="col-panel"></div>
+                                <div class="col-panel"><span class="rzp-currency">₹ </span>{{ item.total_revenue }}</div>
+                                <div class="col-panel"><span class="rzp-currency">₹ </span>{{ item.price }}</div>
+                                <div class="col-panel">{{ item.quantity_sold }}</div>
+                            </div>
+                        </div></div>
+                </div>          
+            </div>
+            {% endfor %}
+</body>
+</html>

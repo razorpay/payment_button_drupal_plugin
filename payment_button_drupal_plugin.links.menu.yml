@@ -1,0 +1,20 @@
+payment_button_drupal_plugin.settings_form:
+  title: 'Razorpay Payment Button Plugin'
+  description: Configuration for Razorpay Payment Button Plugin.
+  parent: system.admin_config
+  route_name: payment_button_drupal_plugin.settings_form
+  weight: 100
+
+payment_button_drupal_plugin.razorpay_buttons_page:
+  title: 'Razorpay Payment Buttons'
+  description: Razorpay Payment Buttons page.
+  parent: payment_button_drupal_plugin.settings_form
+  route_name: payment_button_drupal_plugin.razorpay_buttons_page
+  weight: 101
+
+payment_button_drupal_plugin.payment_setting:
+  title: 'Razorpay Payment Buttons Setting'
+  description: Razorpay Payment Button Settings page.
+  parent: payment_button_drupal_plugin.settings_form
+  route_name: payment_button_drupal_plugin.payment_setting
+  weight: 102

@@ -1,0 +1,10 @@
+<?php
+
+
+function payment_button_drupal_plugin_theme($existing, $type, $theme, $path){
+    return array(
+        'payment_button' => array(
+            'variables' => array('items' => array(), 'title' => '' )
+        )
+    );
+}
