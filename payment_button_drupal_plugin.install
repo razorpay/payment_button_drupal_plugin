@@ -1,0 +1,47 @@
+<?php
+  function payment_button_drupal_plugin_schema(){
+  $schema['user_auth']=[
+    'fields' => [
+      'id'=>[
+        'description'=>'user auth id',
+        'type'=>'serial',
+        'not null' => TRUE,
+      ],
+      'user_id'=>[
+          'type'=>'varchar',
+          'length'=>50,
+          'not null'=>TRUE,
+        ],
+      'key_id'=>[
+          'type'=>'varchar',
+          'length'=>50,
+          'not null'=>TRUE,
+        ],
+      'key_secret'=>[
+          'type'=>'varchar',
+          'length'=>50,
+          'not null'=>TRUE,
+        ],
+    ],
+    'primary key'=>['id'],
+    'indexes'=>[
+      'id'=>['id'],
+    ]
+  ];
+  return $schema;
+}
+
+/**
+ * @file
+ * Install, update and uninstall functions for the payment_button_drupal_plugin module.
+ */
+
+/**
+ * Add the CKEditor Payment Button default configuration.
+ */
+function payment_button_drupal_plugin_update_8001() {
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('payment_button_drupal_plugin.settings');
+  $config->set('library_path', 'libraries/payment');
+  $config->save(TRUE);
+}

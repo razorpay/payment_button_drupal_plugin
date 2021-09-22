@@ -1,0 +1,7 @@
+payment_button_drupal_plugin.settings:
+  type: config_object
+  label: 'Payment Button CKeditor plugin settings'
+  mapping:
+    library_path:
+      type: string
+      label: 'CKEditor Payment Button plugin path'

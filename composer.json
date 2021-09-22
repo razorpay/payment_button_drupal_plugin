@@ -1,0 +1,25 @@
+{
+  "name": "drupal/payment_button_drupal_plugin",
+  "type": "drupal-module",
+  "description": "Adds the Payment Button plugin to CKEditor.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "http://drupal.org/project/payment_button_drupal_plugin",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Mauricio Dinarte (dinarcon)",
+      "homepage": "https://www.drupal.org/u/dinarcon",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "http://drupal.org/project/issues/payment_button_drupal_plugin",
+    "source": "http://cgit.drupalcode.org/payment_button_drupal_plugin"
+  },
+  "require": {
+    "php": "^7.1",
+    "drupal/core": "^8 || ^9",
+    "razorpay/razorpay": "2.*"
+  }
+}
