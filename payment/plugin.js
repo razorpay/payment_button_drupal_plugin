@@ -63,7 +63,8 @@
 						if (this.getContentElement('paymentButtonPlugin', 'paymentbutton').isEnabled()) 
 						{
 							paymentId = this.getValueOf('paymentButtonPlugin', 'paymentbutton');
-							content += '<div>Use Below Button to pay<form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id=' + paymentId +' async> </script> </form></div>';
+							version = "1.0";
+							content += '<div>Use Below Button to pay<form><script src="https://checkout.razorpay.com/v1/payment-button.js" data_plugin = drupal_payment_button_' + version +' data-payment_button_id=' + paymentId +' async> </script> </form></div>';
 						
 						}
 						else {
