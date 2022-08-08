@@ -159,6 +159,10 @@ Yes, you can customize the text and colour of the button as per your brand style
 Changelog
 =========
 
+= 1.0.1 =
+* Tested upto Drupal 9.4.5
+* Tested with Razorpay PHP SDK to 2.8.4
+
 = 1.0 =
 * Initial Changes
 * Tested upto Drupal 9.2.6
